@@ -22,6 +22,39 @@
     <p class="lead blog-description">Dolor sit amet, consectetur</p>
   </div>
   <div class="container">
+    
+
+    <!-- new post modal form -->
+    <div class="modal fade" id="createpostmodal" tabindex="-1" role="dialog" aria-labelledby="createpostlabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="example-label">New post</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="post-title" class="control-label">Post title:</label>
+                <input type="text" class="form-control" id="post-title">
+              </div>
+              <div class="form-group">
+                <label for="post-text" class="control-label">Post text:</label>
+                <textarea class="form-control" id="post-text"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit post</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 
       <div class="row">
 
@@ -36,9 +69,17 @@
                   Blah blah Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel feugiat nisi, vel ornare lacus. Proin id erat vitae neque egestas varius. Praesent at pulvinar ipsum. Quisque sit amet risus ut ex mollis ornare ut non mauris. Suspendisse dignissim euismod tortor, tempor gravida risus vestibulum eu. In sapien lectus, ornare sit amet pharetra at, volutpat sed turpis. Pellentesque sit amet sapien quis nunc dignissim pellentesque vulputate eu elit. Sed dictum scelerisque odio vel malesuada. Curabitur ac felis nec elit molestie aliquam quis quis odio. Curabitur id purus enim.
                 </p>
             </div>
+            <div class="panel panel-default">
+              <div class="panel-body">
+              </div>
+            </div>
           </div>
 
+          <!-- sidebar navigation -->
           <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+            <!-- modal add new post button -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createpostmodal">New Post</button>
+            <!-- more sidebar navigation and stuff -->
             <div class="sidebar-module sidebar-module-inset">
               <h4>Sidebar stuffs</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eros augue, euismod et volutpat a, sodales sed sapien. Aliquam quis lacus sed diam congue mollis vitae sit amet purus.</p>
@@ -48,13 +89,19 @@
               </div>
               </input>
             </div>
+
+            <!-- post archive links -->
             <div class="sidebar-module">
-              <h4>Post Archives</h4>
-              <ul class="list-unstyled">
-                <li>Post One</li>
-                <li>Post Two</li>
-                <li>Post Three</li>
-              </ul>
+              <div class="list-group">
+                <h4 class="list-group-item-heading">Post Archives</h4>
+                  <a href="#" class="list-group-item active">Post One</a>
+                  <a href="#" class="list-group-item">Post Two</a>
+                  <a href="#" class="list-group-item">Post Three</a>
+                  <a href="#" class="list-group-item">Post Four</a>
+                  <a href="#" class="list-group-item">Post Five</a>
+                  <a href="#" class="list-group-item">Post Six</a>
+                </ul>
+              </div>
             </div>
           </div>
       </div>
