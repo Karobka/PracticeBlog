@@ -45,7 +45,7 @@ $(document).ready(function() {
             alert("Can't submit a blank post");
         }else {
             $(".blog-post").children().remove();
-            var newerPost = new NewPost(createId, $("#post-title").val(), Date(), $("#post-title").val(), $("#post-text").val() )
+            var newerPost = new NewPost(createId(), $("#post-title").val(), Date(), $("#post-title").val(), $("#post-text").val() )
             newerPost.create();
             postsarray.push(newerPost);
             console.log(postsarray);
