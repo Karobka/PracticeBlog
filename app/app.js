@@ -1,11 +1,13 @@
+"use strict";
+
 $(document).ready(function() {
-    var createId = function() {
-        var id = 0;
+    var createId = (function() {
+        var postId = 0;
         return function() {
-            id++;
-            return id;
+            postId++;
+            return postId;
         };
-    };
+    }());
     
     var postsarray = [];
 
@@ -15,9 +17,16 @@ $(document).ready(function() {
         this.postDate = postDate,
         this.postAuthor = postAuthor,
         this.postText = postText
-    }
+    };
 
-   
+   NewPost.prototype.create = function() {
+       $(".blog-post").append(
+                "<h2 class='blog-post-title'>" + this.postTitle + "</h2>" +
+                "<p class='blog-post-meta'>" + this.postDate + "</p>" +
+                "<p>" + this.postText + "</p>"
+            );
+            this.postId++;
+   };
     
 
 
@@ -35,19 +44,16 @@ $(document).ready(function() {
         if ($("#post-text").val() == "" || $("#post-title").val() == ""){
             alert("Can't submit a blank post");
         }else {
-            this.postId++;
-            var newPost = new NewPost(createId(), $("#post-title").val(), Date(), $("#post-title").val(), $("#post-text").val() )
-            postsarray.push(newPost);
+            $(".blog-post").children().remove();
+            var newerPost = new NewPost(createId, $("#post-title").val(), Date(), $("#post-title").val(), $("#post-text").val() )
+            newerPost.create();
+            postsarray.push(newerPost);
             console.log(postsarray);
             /** add new post title to post listing */
             $("#post-list").after("<a href='#' class='list-group-item'>" + $("#post-title").val() + "</a>");
             /** update body with latest post ???is there a way to do this and clicking on an old post in the list???*/
-            $(".blog-post").children().remove();
-            $(".blog-post").append(
-                "<h2 class='blog-post-title'>" + newPost.postTitle + "</h2>",
-                "<p class='blog-post-meta'>" + newPost.postDate + "</p>",
-                "<p>" + newPost.postText + "</p>"
-            )
+            
+            
         }
     });
 
