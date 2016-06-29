@@ -24,6 +24,12 @@ $(document).ready(function() {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var recipient = button.data('whatever') // Extract info from data-* attributes
 });
+    /** clear modal form inputs when hidden */
+    $(".modal").on('hidden.bs.modal', function (event) { 
+        $("#post-text, #post-title").val("");
+    });
+
+     
  
 
     $("#newpostbtn").click(function() {
@@ -34,6 +40,7 @@ $(document).ready(function() {
         }else {
             postsarray.push({postTitle: newPostTitle, postDate:NaN/** change this */, postText:newPostText});
             console.log(postsarray);
+
         }
     });
 
