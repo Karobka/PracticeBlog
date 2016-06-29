@@ -19,7 +19,7 @@ $(document).ready(function() {
     
 
 
-    /** interface to create new post */
+    /** bootstrap interface to create new post */
     $("#createpostmodal").on('show.bs.modal');
 
 
@@ -37,11 +37,10 @@ $(document).ready(function() {
         }else {
             postsarray.push({postTitle: newPostTitle, postDate:NaN/** change this */, postText:newPostText});
             console.log(postsarray);
+            /** add new post title to post listing */
             $("#post-list").after("<a href='#' class='list-group-item'>" + newPostTitle + "</a>");
         }
     });
-
-
 
     /**Append or replace ".blog-post" (a child of ".blog-main") with content from clicked link */
     $(".list-group-item").click(function() {
@@ -51,32 +50,13 @@ $(document).ready(function() {
             "<p class='blog-post-meta'>" + postsarray[0].postDate + "</p>",
             "<p>" + postsarray[0].postText + "</p>"
         )
-
     });
-
-
-
-/**Adding a post object */
-    function addPost(title, postDate, postText){
-        postsarray.push({
-            title: title,
-            postDate: postDate,
-            postText: postText
-        });
-    }
 
 
 
 });
 
-
-
-/** 
- * On clicking on a link to a different post
- *  find that matching post in the array
- *    append that post to the page
- * 
- * 
- * Stretch goal is to have a form at the bottom
- * where user can input text and create a basic post.
-*/
+/** When a post is created,  we pass it to the object constructor and 
+ * it needs to use its title for its object name 
+ * then we add it to an array
+ * */
