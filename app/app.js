@@ -20,18 +20,15 @@ $(document).ready(function() {
 
 
     /** interface to create new post */
-    $("#createpostmodal").on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget) // Button that triggered the modal
-        var recipient = button.data('whatever') // Extract info from data-* attributes
-});
+    $("#createpostmodal").on('show.bs.modal');
+
+
     /** clear modal form inputs when hidden */
-    $(".modal").on('hidden.bs.modal', function (event) { 
+    $(".modal").on('hidden.bs.modal', function() { 
         $("#post-text, #post-title").val("");
     });
 
-     
- 
-
+    /** copy input values to new object in array */
     $("#newpostbtn").click(function() {
         var newPostTitle = $("#post-title").val();
         var newPostText = $("#post-text").val();
@@ -40,7 +37,7 @@ $(document).ready(function() {
         }else {
             postsarray.push({postTitle: newPostTitle, postDate:NaN/** change this */, postText:newPostText});
             console.log(postsarray);
-
+            $("#post-list").after("<a href='#' class='list-group-item'>" + newPostTitle + "</a>");
         }
     });
 
