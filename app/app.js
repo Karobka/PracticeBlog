@@ -21,11 +21,11 @@ $(document).ready(function() {
 
    NewPost.prototype.createPost = function() {
        $(".blog-post").append(
-                "<h2 class='blog-post-title' value:'" + this.postId + "'>" + this.postTitle + "</h2>" +
-                "<p class='blog-post-meta'>" + this.postDate + "</p>" +
+                "<h2 class='blog-post-title' value:'" + this.postId + "'>" + this.postTitle + "</h2>"  +
+                "<p class='blog-post-meta'>" + this.postDate + "</p>" + "<hr>" +
                 "<p>" + this.postText + "</p>"
             );
-            /** add new post title to post listing */
+            /** add new post title to post listing  and include post ID*/
             $("#post-list").after("<a href='#' class='list-group-item' value:'" + this.postId + "'>" + this.postTitle + "</a>");
         };
     
@@ -47,13 +47,14 @@ $(document).ready(function() {
             var newerPost = new NewPost(createId(), $("#post-title").val(), Date(), $("#post-title").val(), $("#post-text").val() )
             newerPost.createPost();
             postsarray.push(newerPost);
-            console.log(postsarray);
-            
+            console.log(postsarray); 
         }
     });
 
     /**update body with clicked on post  Append or replace ".blog-post" (a child of ".blog-main") with content from clicked link */
-    $(".list-group-item").click(function() {        
+    $(".list-group-item").click(function(postId) {        
+        var newnumber = postsarray.find(postId);
+        console.log(newnumber);
         
         $(".blog-post").children().remove();
         $(".blog-post").append(
