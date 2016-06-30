@@ -18,127 +18,132 @@
 <body>
   <!-- Put jumbotron outside of "container" to get it to span the width of the window -->
   <div class="jumbotron text-center">
-    <h1 class="blog-title">Lorem Ipsum</h1>
-    <p class="lead blog-description">Dolor sit amet, consectetur</p>
+    <h1>Lorem Ipsum</h1>
+    <p>Dolor sit amet, consectetur</p>
   </div>
+
+<div class="container">
+
+
+  <!-- new post modal form -->
+  <div class="modal fade" id="createpostmodal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          <h4 class="modal-title" id="example-label">Create a new post</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="post-title" class="control-label">Post title:</label>
+              <input type="text" class="form-control" id="post-title">
+            </div>
+            <div class="form-group">
+              <label for="post-text" class="control-label">Post text:</label>
+              <textarea class="form-control" id="post-text"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="closemodal" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="newpostbtn" class="btn btn-primary" data-dismiss="modal">Submit post</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- login modal form -->
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          <h4 class="modal-title" id="example-label">Enter a name to log in</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="user-name" class="control-label">User Name:</label>
+              <input type="text" class="form-control" id="user-name">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="closemodal" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="btn-log-in" class="btn btn-primary" data-dismiss="modal">Log In</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- posts and content -->
   <div class="row">
+
+    <div class="col-sm-8 blog-main">
+      <div class="blog-post">
+        <h2 class="blog-post-title">Welcome</h2>
+        <p class="blog-post-meta"><span id="post-date"></span><span id="post-person"></span></p>
+        <hr>
+        <p>Please login and create a post!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo tortor at nisi viverra, eu vestibulum eros vehicula. Morbi tincidunt risus eros, in pulvinar nisi viverra a. Aenean lacinia fringilla dui ac pulvinar. Pellentesque pretium eget lacus sed sollicitudin. Vivamus tristique nulla eu sodales suscipit. Nulla ex nisi, consequat ac justo commodo, molestie finibus nunc. Aliquam maximus suscipit tellus nec sodales. Donec et dolor risus. Nunc malesuada ultrices dolor non posuere. In eu nulla lectus. Vestibulum dictum magna sed nulla elementum efficitur. Sed ultrices elit elit.
+
+Aenean risus elit, aliquam a justo vitae, vehicula vestibulum sapien. Nam imperdiet lacus quis massa bibendum luctus blandit non nulla. Vivamus id ornare nunc, ut consequat risus. Donec mattis, tellus a mattis interdum, tortor diam mattis elit, et suscipit risus lorem sit amet turpis. Aliquam erat volutpat. Nulla ullamcorper pretium elit, vitae posuere nisl facilisis eget. Phasellus volutpat rhoncus metus, tincidunt facilisis tellus vestibulum eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+Vestibulum eget dui aliquam, tincidunt quam eget, varius est. Nulla a mollis libero. Etiam imperdiet, nibh malesuada pellentesque cursus, quam sapien commodo orci, et aliquam orci urna sit amet sem. Nunc vitae sodales nisl, ut scelerisque enim. Integer ut felis sit amet tortor vestibulum auctor iaculis sed tellus. Vivamus aliquet tellus in convallis dapibus. Morbi elit erat, laoreet eget quam eget, tempus malesuada eros. Nam vitae orci ac ipsum tempor eleifend eget a tellus. Donec id pharetra enim, nec placerat augue. Sed non scelerisque massa, sed laoreet lorem. Curabitur consequat eros quis augue aliquam, in bibendum mi tempus. Proin egestas fringilla iaculis. Nunc eleifend sed diam varius blandit. Pellentesque non lectus nec odio cursus hendrerit et id felis.
+
+Donec non pulvinar nulla. In hac habitasse platea dictumst. Ut porta eget risus eu volutpat. Donec placerat, tellus quis imperdiet faucibus, eros est sollicitudin purus, ac accumsan mi est a sem. In aliquam semper nunc eget aliquet. In eu sollicitudin odio, eu pellentesque purus. Maecenas semper accumsan dui eget rhoncus. Quisque semper interdum lacinia. Donec eget ante orci. Nunc sed feugiat enim. Phasellus ut massa tellus. Praesent dignissim nisi ex, eu maximus mi interdum et. Phasellus vel erat imperdiet, dignissim justo consequat, faucibus lorem. In rhoncus mattis turpis, eu faucibus risus finibus eget.
+
+Integer volutpat neque porttitor fermentum venenatis. Duis auctor, ex in sagittis sagittis, odio magna semper eros, eu gravida mi elit viverra lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec volutpat, arcu ac accumsan gravida, sapien libero accumsan erat, vitae suscipit dui enim nec neque. Vestibulum ex ipsum, feugiat eu iaculis vitae, ultrices at nibh. Praesent feugiat suscipit ex, quis venenatis enim luctus vel. Vestibulum vitae ipsum vitae lacus mollis euismod non id velit.
+
+        </p>
+      </div>
+    </div>
+
+    <!-- sidebar navigation -->
+    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+      <!-- modal log in button-->
+      <button type="button" id="btn-start-login" class="btn btn-default" data-toggle="modal" data-target="#login-modal">Log In To Create a Post</button>
+      <!-- modal add new post button -->
+      <button type="button" id="btn-create-post" class="btn btn-primary" data-toggle="modal" data-target="#createpostmodal">New Post</button>
+      <!-- more sidebar navigation and stuff -->
+      <div class="sidebar-buffer">
+        <h4>About <span id="about-name"></span></h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eros augue, euismod et volutpat a, sodales sed sapien.
+          Aliquam quis lacus sed diam congue mollis vitae sit amet purus.</p>
+      </div>
+      <div class="sidebar-buffer">
+        <div class="input-group">
+          <span class="input input-group-addon">Search</span>
+          <input type="text" class="form-control"></input>
+        </div>
+      </div>
+
+      <!-- post archive links -->
+      <div class="sidebar-buffer">
+        <div class="list-group">
+          <h3 class="list-group-item-heading" id="post-list">Latest Posts</h3>
+          <a href="#" class="list-group-item" value="5">Post One</a>
+          <a href="#" class="list-group-item" value="6">Post Two</a>
+          <a href="#" class="list-group-item" value="7">Post Three</a>
+          <a href="#" class="list-group-item">Post Four</a>
+          <a href="#" class="list-group-item">Post Five</a>
+          <a href="#" class="list-group-item">Post Six</a>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="container">
-    
-
-    <!-- new post modal form -->
-    <div class="modal fade" id="createpostmodal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-              <span>&times;</span>
-            </button>
-            <h4 class="modal-title" id="example-label">Create a new post</h4>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="post-title" class="control-label">Post title:</label>
-                <input type="text" class="form-control" id="post-title">
-              </div>
-              <div class="form-group">
-                <label for="post-text" class="control-label">Post text:</label>
-                <textarea class="form-control" id="post-text"></textarea>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" id="closemodal" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" id="newpostbtn" class="btn btn-primary" data-dismiss="modal">Submit post</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- login modal form -->
-    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-              <span>&times;</span>
-            </button>
-            <h4 class="modal-title" id="example-label">Enter a name to log in</h4>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="user-name" class="control-label">User Name:</label>
-                <input type="text" class="form-control" id="user-name">
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" id="closemodal" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" id="btn-log-in" class="btn btn-primary" data-dismiss="modal">Log In</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- posts and content -->
-      <div class="row">
-
-          <div class="col-sm-8 blog-main">
-            <div class="blog-post">
-              <h2 class="blog-post-title">In Sapien Lectus</h2>
-              <p class="blog-post-meta"><span id="post-date">Wed Jun 29 2016</span><span id="post-person">Jimbo</span></p>
-                <hr>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel feugiat nisi, vel ornare lacus. Proin id erat vitae neque egestas varius. Praesent at pulvinar ipsum. Quisque sit amet risus ut ex mollis ornare ut non mauris. Suspendisse dignissim euismod tortor, tempor gravida risus vestibulum eu. In sapien lectus, ornare sit amet pharetra at, volutpat sed turpis. Pellentesque sit amet sapien quis nunc dignissim pellentesque vulputate eu elit. Sed dictum scelerisque odio vel malesuada. Curabitur ac felis nec elit molestie aliquam quis quis odio. Curabitur id purus enim.
-                </p>
-                <p>
-                  Blah blah Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel feugiat nisi, vel ornare lacus. Proin id erat vitae neque egestas varius. Praesent at pulvinar ipsum. Quisque sit amet risus ut ex mollis ornare ut non mauris. Suspendisse dignissim euismod tortor, tempor gravida risus vestibulum eu. In sapien lectus, ornare sit amet pharetra at, volutpat sed turpis. Pellentesque sit amet sapien quis nunc dignissim pellentesque vulputate eu elit. Sed dictum scelerisque odio vel malesuada. Curabitur ac felis nec elit molestie aliquam quis quis odio. Curabitur id purus enim.
-                </p>
-            </div>
-          </div>
-
-          <!-- sidebar navigation -->
-          <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-            <!-- modal log in button-->
-            <button type="button" id="btn-start-login" class="btn btn-default" data-toggle="modal" data-target="#login-modal">Log In To Create a Post</button>
-            <!-- modal add new post button -->
-            <button type="button" id="btn-create-post" class="btn btn-primary" data-toggle="modal" data-target="#createpostmodal">New Post</button>
-            <!-- more sidebar navigation and stuff -->
-            <div class="sidebar-module sidebar-module-inset">
-              <h4>About <span id="about-name"></span></h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eros augue, euismod et volutpat a, sodales sed sapien. Aliquam quis lacus sed diam congue mollis vitae sit amet purus.</p>
-            </div>
-            <div class="sidebar-module sidebar-module-inset">
-              <div class="input-group">
-                <span class="input input-group-addon">Search</span>
-                <input type="text" class="form-control"></input>
-              </div>
-            </div>
-
-            <!-- post archive links -->
-            <div class="sidebar-module sidebar-module-inset">
-              <div class="list-group">
-                <h3 class="list-group-item-heading" id="post-list">Latest Posts</h3>
-                  <a href="#" class="list-group-item" value="5">Post One</a>
-                  <a href="#" class="list-group-item" value="6">Post Two</a>
-                  <a href="#" class="list-group-item" value="7">Post Three</a>
-                  <a href="#" class="list-group-item">Post Four</a>
-                  <a href="#" class="list-group-item">Post Five</a>
-                  <a href="#" class="list-group-item">Post Six</a>
-                </ul>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
+</div>
 
 <footer>
   <p>Created By Me</p>
-  <p>Lorim ipsum dolor</p>
+  <p>Lorim ipsum dolor bbb</p>
 </footer>
     
      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
