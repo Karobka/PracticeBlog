@@ -19,17 +19,16 @@ $(document).ready(function() {
         this.postText = postText
     };
 
-   NewPost.prototype.create = function() {
+   NewPost.prototype.createPost = function() {
        $(".blog-post").append(
-                "<h2 class='blog-post-title'>" + this.postTitle + "</h2>" +
+                "<h2 class='blog-post-title' value:'" + this.postId + "'>" + this.postTitle + "</h2>" +
                 "<p class='blog-post-meta'>" + this.postDate + "</p>" +
                 "<p>" + this.postText + "</p>"
             );
-            this.postId++;
-   };
+            /** add new post title to post listing */
+            $("#post-list").after("<a href='#' class='list-group-item' value:'" + this.postId + "'>" + this.postTitle + "</a>");
+        };
     
-
-
     /** bootstrap interface to create new post */
     $("#createpostmodal").on('show.bs.modal');
 
@@ -46,19 +45,16 @@ $(document).ready(function() {
         }else {
             $(".blog-post").children().remove();
             var newerPost = new NewPost(createId(), $("#post-title").val(), Date(), $("#post-title").val(), $("#post-text").val() )
-            newerPost.create();
+            newerPost.createPost();
             postsarray.push(newerPost);
             console.log(postsarray);
-            /** add new post title to post listing */
-            $("#post-list").after("<a href='#' class='list-group-item'>" + $("#post-title").val() + "</a>");
-            /** update body with latest post ???is there a way to do this and clicking on an old post in the list???*/
-            
             
         }
     });
 
     /**update body with clicked on post  Append or replace ".blog-post" (a child of ".blog-main") with content from clicked link */
-    $(".list-group-item").click(function() {
+    $(".list-group-item").click(function() {        
+        
         $(".blog-post").children().remove();
         $(".blog-post").append(
             "<h2 class='blog-post-title'>" + postsarray[0].postTitle + "</h2>",
@@ -71,7 +67,7 @@ $(document).ready(function() {
 
 });
 
-/** When a post is created,  we pass it to the object constructor and 
- * it needs to use its title for its object name 
- * then we add it to an array
- * */
+/**Assign the object's postId value to the link
+ * When the link is clicked on it finds the postId value in the objects that matches
+ * Display matching object/post
+ */
