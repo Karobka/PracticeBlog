@@ -57,6 +57,32 @@
       </div>
     </div>
 
+    <!-- login modal form -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+            <h4 class="modal-title" id="example-label">Enter a name to log in</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="user-name" class="control-label">User Name:</label>
+                <input type="text" class="form-control" id="user-name">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="closemodal" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="btn-log-in" class="btn btn-primary" data-dismiss="modal">Log In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <!-- posts and content -->
       <div class="row">
@@ -73,17 +99,17 @@
                   Blah blah Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel feugiat nisi, vel ornare lacus. Proin id erat vitae neque egestas varius. Praesent at pulvinar ipsum. Quisque sit amet risus ut ex mollis ornare ut non mauris. Suspendisse dignissim euismod tortor, tempor gravida risus vestibulum eu. In sapien lectus, ornare sit amet pharetra at, volutpat sed turpis. Pellentesque sit amet sapien quis nunc dignissim pellentesque vulputate eu elit. Sed dictum scelerisque odio vel malesuada. Curabitur ac felis nec elit molestie aliquam quis quis odio. Curabitur id purus enim.
                 </p>
             </div>
-            <div class="panel panel-default">
-            </div>
           </div>
 
           <!-- sidebar navigation -->
           <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+            <!-- modal log in button-->
+            <button type="button" id="btn-start-login" class="btn btn-default" data-toggle="modal" data-target="#login-modal">Log In To Create a Post</button>
             <!-- modal add new post button -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createpostmodal">New Post</button>
+            <button type="button" id="btn-create-post" class="btn btn-primary" data-toggle="modal" data-target="#createpostmodal">New Post</button>
             <!-- more sidebar navigation and stuff -->
             <div class="sidebar-module sidebar-module-inset">
-              <h4>About</h4>
+              <h4>About <span id="about-name"></span></h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eros augue, euismod et volutpat a, sodales sed sapien. Aliquam quis lacus sed diam congue mollis vitae sit amet purus.</p>
             </div>
             <div class="sidebar-module sidebar-module-inset">
@@ -97,9 +123,9 @@
             <div class="sidebar-module sidebar-module-inset">
               <div class="list-group">
                 <h3 class="list-group-item-heading" id="post-list">Latest Posts</h3>
-                  <a href="#" class="list-group-item">Post One</a>
-                  <a href="#" class="list-group-item">Post Two</a>
-                  <a href="#" class="list-group-item">Post Three</a>
+                  <a href="#" class="list-group-item" value="5">Post One</a>
+                  <a href="#" class="list-group-item" value="6">Post Two</a>
+                  <a href="#" class="list-group-item" value="7">Post Three</a>
                   <a href="#" class="list-group-item">Post Four</a>
                   <a href="#" class="list-group-item">Post Five</a>
                   <a href="#" class="list-group-item">Post Six</a>
@@ -109,12 +135,12 @@
           </div>
       </div>
     </div>
-    
-  
 
-      
-    </div>
-  </div>
+<footer>
+  <p>Created By Me</p>
+  <p>Lorim ipsum dolor</p>
+</footer>
+    
      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

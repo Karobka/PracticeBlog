@@ -12,3 +12,16 @@ body {
   font-size: 18px;
   line-height: 1.5;
 }
+
+#btn-create-post {
+  display: none;
+}
+
+footer {
+  background-color: #f9f9f9;
+  height: auto;
+  text-align: center;
+  border-top: 1px solid black;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
