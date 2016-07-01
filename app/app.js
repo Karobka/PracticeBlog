@@ -21,19 +21,19 @@ $(document).ready(function() {
     var postsarray = [
         {
             postId: "5",
-            postTitle: "Post Number 1",
+            postTitle: "Post One",
             postDate: "June 1, 2016",
             postText: "Blah blah blah" 
         },
         {
             postId: "6",
-            postTitle: "Post Number 2",
+            postTitle: "Post Two",
             postDate: "May 2, 2016",
             postText: "More more more"
         },
         {
             postId: "7",
-            postTitle: "Post Number 3",
+            postTitle: "Post Three",
             postDate: "April 3, 2016",
             postText: "Another Another Another"
         }
@@ -51,7 +51,7 @@ $(document).ready(function() {
        $(".blog-post").append(
                 "<h2 class='blog-post-title' value:'" + this.postId + "'>" + this.postTitle + "</h2>"  +
                 "<p class='blog-post-meta'>" + this.postDate + " Posted by: " + userName + "</p>" + "<hr>" +
-                "<p>" + this.postText + "</p>"
+                "<p class='post-content'>" + this.postText + "</p>"
             );
             /** add new post title to post listing  and include post ID*/
             $("#post-list").after("<a href='#' class='list-group-item' value:'" + this.postId + "'>" + this.postTitle + "</a>");
@@ -80,30 +80,19 @@ $(document).ready(function() {
     });
 
     /**update body with matching postID content for clicked post   */
-    $(".list-group-item").click(function() {        
-        /** var newnumber = postsarray.find(postId);
-        /** console.log(newnumber); */
-        for (var prop in postsarray){
-            console.log(postId[prop]);
-        }
-        for (var i=0; i < postsarray.length; i++) {
-            console.log(postsarray[{postId:['prop']}]);
+    $('.list-group').on('click', 'a', function() {
+        for (var post in postsarray) {
+            if (postsarray[post].postTitle === $(this).text()) {
+                $('.blog-post h2').text(postsarray[post].postTitle);
+                $('.blog-post-meta').text(postsarray[post].postDate);
+                $('.post-content').text(postsarray[post].postText);
+            }
         }
 
-        
-        $(".blog-post").children().remove();
-        $(".blog-post").append(
-            "<h2 class='blog-post-title'>" + postsarray[0].postTitle + "</h2>",
-            "<p class='blog-post-meta'>" + postsarray[0].postDate + "</p>",
-            "<p>" + postsarray[0].postText + "</p>"
-        )
     });
 
 
 
 });
 
-/**Assign the object's postId value to the link
- * When the link is clicked on it finds the postId value in the objects that matches
- * Display matching object/post
- */
+
