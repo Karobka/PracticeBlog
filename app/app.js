@@ -23,19 +23,19 @@ $(document).ready(function() {
             postId: "5",
             postTitle: "Post One",
             postDate: "June 1, 2016",
-            postText: "Blah blah blah" 
+            postText: "Aenean risus elit, aliquam a justo vitae, vehicula vestibulum sapien. Nam imperdiet lacus quis massa bibendum luctus blandit non nulla. Vivamus id ornare nunc, ut consequat risus. Donec mattis, tellus a mattis interdum, tortor diam mattis elit, et suscipit risus lorem sit amet turpis. Aliquam erat volutpat. Nulla ullamcorper pretium elit, vitae posuere nisl facilisis eget." 
         },
         {
             postId: "6",
             postTitle: "Post Two",
             postDate: "May 2, 2016",
-            postText: "More more more"
+            postText: "Vestibulum eget dui aliquam, tincidunt quam eget, varius est. Nulla a mollis libero. Etiam imperdiet, nibh malesuada pellentesque cursus, quam sapien commodo orci, et aliquam orci urna sit amet sem. Nunc vitae sodales nisl, ut scelerisque enim. Integer ut felis sit amet tortor vestibulum auctor iaculis sed tellus."
         },
         {
             postId: "7",
             postTitle: "Post Three",
             postDate: "April 3, 2016",
-            postText: "Another Another Another"
+            postText: "Donec non pulvinar nulla. In hac habitasse platea dictumst. Ut porta eget risus eu volutpat. Donec placerat, tellus quis imperdiet faucibus, eros est sollicitudin purus, ac accumsan mi est a sem. In aliquam semper nunc eget aliquet. In eu sollicitudin odio, eu pellentesque purus. Maecenas semper accumsan dui eget rhoncus."
         }
     ];
 
